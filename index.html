@@ -51,12 +51,11 @@
         })
         })   
         
-
-
-
-
-        let resolution = prompt('How many squares per side do you want?');
-        resolution = Number(resolution)    
+        let resolution = prompt('How many squares per side do you want? Less than 100 please');
+        resolution = Number(resolution)
+        while((resolution>99) || (resolution.length>0)|| (Number.isNaN(resolution))){
+        resolution = Number(prompt('that was a number larger than 100. try again'))}
+            
 
         let container = document.querySelector('.container');
         container.setAttribute('style',`grid-template-columns: repeat(${resolution},1fr);grid-template-rows: repeat(${resolution},1fr) ` )
