@@ -22,9 +22,9 @@
     <script>
         let resetbutton = document.querySelector('.reset')
         resetbutton.addEventListener('click',function(e){
-            
+            let tiles = document.querySelectorAll('.border')
             tiles.forEach((tile)=>{
-                tile.setAttribute('style','background:white')
+                tile.setAttribute('style','background:""')
         })
         })
 
