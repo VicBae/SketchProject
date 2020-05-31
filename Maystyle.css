@@ -1,0 +1,46 @@
+:root{
+    --boxnumber:16;
+}
+.centering{
+    margin:2em auto 0 auto;
+    width:80%;
+    text-align: center;
+}
+
+.container{
+    display: grid;
+    width: 500px;
+    height: 500px;
+    
+    border-color: lightskyblue;
+    border-style: dotted;
+    border-width: 0.003px 0px 0px 0.003px;
+}
+
+.border{
+    border-color: lightskyblue;
+    border-style: dotted;
+    border-width: 0px 0.003px 0.003px 0px;    
+}
+
+.buttons{
+    width: 35%;
+    margin: auto;
+    margin-top:20px;
+}
+
+.reset{
+    display: inline-block;    
+}
+
+.restart{
+    display: inline-block;
+    position:relative;
+    left: 20px;
+}
+
+.colors{
+    display: inline-block;
+    position:relative;
+    left: 42px;
+}

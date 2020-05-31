@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="Maystyle.css"> 
+        <title> Paint it </title>
+    </head>
+    <body>
+        
+        <h1 style='margin-top:1em' class='centering'> Let's paint the world </h1>   
+        
+        <div class='buttons'>
+        <button class='reset'>Clear the board</button>
+        <button class='restart'>Adjust your resolution</button>
+        <button class='colors'>Choose your coloring</button>
+        </div>
+        
+        
+        <div class='container centering'>       
+        </div>
+
+
+    <script>
+        let resetbutton = document.querySelector('.reset')
+        resetbutton.addEventListener('click',function(e){
+            
+            tiles.forEach((tile)=>{
+                tile.setAttribute('style','background:white')
+        })
+        })
+
+        let restartbutton = document.querySelector('.restart')
+        restartbutton.addEventListener('click',function(e){
+            /*window.location.reload()*/
+            let kasec = prompt('how many squres?')
+            container.setAttribute('style',`grid-template-columns: repeat(${kasec},1fr); grid-template-rows: repeat(${kasec},1fr)`)
+            
+            while(container.lastElementChild){
+                container.removeChild(container.lastChild)
+            }
+
+            for(i=0; i<(kasec**2); i++){
+            let cells = document.createElement('div');
+            cells.classList.add('border');
+            container.appendChild(cells);
+        }
+        let tiles = document.querySelectorAll('.border')
+        tiles.forEach((tile)=>{
+            tile.addEventListener('mouseover',function(e){
+                tile.setAttribute('style','background:lightblue')                                
+            })
+        })
+        })   
+        
+
+
+
+
+        let resolution = prompt('How many squares per side do you want?');
+        resolution = Number(resolution)    
+
+        let container = document.querySelector('.container');
+        container.setAttribute('style',`grid-template-columns: repeat(${resolution},1fr);grid-template-rows: repeat(${resolution},1fr) ` )
+        
+        
+        for(i=0; i<resolution*resolution; i++){
+            let cells = document.createElement('div');
+            cells.classList.add('border');
+            container.appendChild(cells)
+        }
+        
+        let tiles = document.querySelectorAll('.border')
+        tiles.forEach((tile)=>{
+            tile.addEventListener('mouseover',function(e){
+                tile.setAttribute('style','background:lightblue')                                
+            })
+        }
+        )
+
+    </script>
+    </body>
+    </html>
